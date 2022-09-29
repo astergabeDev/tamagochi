@@ -27,7 +27,7 @@ public class Principal {
                 tamagochi.dormir();
             }
 
-            //O codigo abaixo (try/catch) adiciona o delay entre cada execução do while para não ficar spammando no console
+            //O código abaixo (try/catch) adiciona o delay entre cada execução do while para não ficar com spam no console
             //https://www.guj.com.br/t/delay-no-java/97997/4
             try {
                 Thread.sleep(2000);
