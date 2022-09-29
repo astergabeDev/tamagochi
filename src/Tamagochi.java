@@ -1,11 +1,13 @@
 import lombok.*;
 
+import java.util.Scanner;
+
 @Data
 
 public class Tamagochi {
 
     private String nome;
-    private boolean morto = false;
+    private boolean IsMorto = false;
 
     //idade em dias
     //quando idade = 15 ele morre
@@ -17,7 +19,7 @@ public class Tamagochi {
     // 20 quilos ele explode (morre)
     // 0 quilos  desnutrido (morre)
     private boolean fome = false;
-    private double peso = 10;
+    private double peso = 1;
 
     //if sono > 5 = dormir automaticamente
     //sempre que dormir idade++ (+1 dia)
@@ -32,6 +34,70 @@ public class Tamagochi {
         this.nome = nome;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public boolean isMorto() {
+        return IsMorto;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public boolean isFome() {
+        return fome;
+    }
+
+    public void setFome(boolean fome) {
+        this.fome = fome;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    public boolean isSono() {
+        return sono;
+    }
+
+    public void setSono(boolean sono) {
+        this.sono = sono;
+    }
+
+    public int getSomaSono() {
+        return somaSono;
+    }
+
+    public void setSomaSono(int somaSono) {
+        this.somaSono = somaSono;
+    }
+
+    public boolean isEntediado() {
+        return entediado;
+    }
+
+    public void setEntediado(boolean entediado) {
+        this.entediado = entediado;
+    }
+
+    public void setMorto(boolean morto) {
+        IsMorto = morto;
+    }
+    static Scanner input = new Scanner(System.in); //cria um scanner
     //region Fome
     public void sentirFome(){
     //1
@@ -40,6 +106,21 @@ public class Tamagochi {
         System.out.println(" 1 - Comer Muito");
         System.out.println(" 2 - Comer Pouco");
         System.out.println(" 3 - Não Comer");
+        int opcao = input.nextInt();
+        switch (opcao){
+            case 1:
+                comerMuito();
+                break;
+            case 2:
+                comerPouco();
+                break;
+            case 3:
+                naoComer();
+                break;
+            default:
+                System.out.println("insira uma opção válida");
+                break;
+        }
     }
 
     public void comerMuito(){
@@ -65,11 +146,23 @@ public class Tamagochi {
 
     //region Sono
     public void sentirSono(){
-    //2
+    //3
         System.out.println(this.nome + " está com sono...");
         System.out.println("O que deseja fazer?: ");
         System.out.println(" 1 - Dormir");
         System.out.println(" 2 - Permanecer Acordado");
+        int opcao = input.nextInt();
+        switch (opcao){
+            case 1:
+                dormir();
+                break;
+            case 2:
+                permanecerAcordado();
+                break;
+            default:
+                System.out.println("insira uma opçao valida");
+                break;
+        }
     }
 
     public void dormir(){
@@ -87,11 +180,23 @@ public class Tamagochi {
     //region Entediado
 
     public void ficarEntediado (){
-    //3
+    //5
         System.out.println(this.nome + " está com entediado...");
         System.out.println("O que deseja fazer?: ");
         System.out.println(" 1 - Correr 10 minutos");
         System.out.println(" 2 - Caminhar 10 minutos");
+        int opcao = input.nextInt();
+        switch (opcao){
+            case 1:
+                correr();
+                break;
+            case 2:
+                caminhar();
+                break;
+            default:
+                System.out.println("insira uma opçao valida");
+                break;
+        }
     }
 
     public void correr (){
@@ -104,13 +209,13 @@ public class Tamagochi {
         this.peso--;
         System.out.println("Seu tamagochi");
         System.out.println(this.nome + " está com " + this.peso + "kg");
-        fome = true;
+        setFome(true);
     }
     //endregion
 
     public void morrer(){
         System.out.println(this.nome + " morreu D:");
-        morto = true;
+        setMorto(true);
     }
 }
 
