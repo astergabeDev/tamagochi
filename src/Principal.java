@@ -28,7 +28,7 @@ public class Principal {
             //O codigo abaixo (try/catch) adiciona o delay entre cada execução do while para não ficar spammando no console
             //https://www.guj.com.br/t/delay-no-java/97997/4
             try {
-                Thread.sleep(3000);
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -39,13 +39,13 @@ public class Principal {
                     tamagochi.sentirFome();
                     break;
                 case 2:
-                    System.out.println(".");
+                    System.out.println("...");
                     break;
                 case 3:
                     tamagochi.sentirSono();
                     break;
                 case 4:
-                    System.out.println("..");
+                    System.out.println("...");
                     break;
                 case 5:
                     tamagochi.ficarEntediado();
@@ -54,13 +54,13 @@ public class Principal {
                     System.out.println("...");
                     break;
                 case 7:
-                    System.out.println("....");
+                    System.out.println("...");
                     break;
                 case 8:
-                    System.out.println(".....");
+                    System.out.println("...");
                     break;
                 case 9:
-                    System.out.println("......");
+                    System.out.println("...");
                     break;
                 default:
                     break;

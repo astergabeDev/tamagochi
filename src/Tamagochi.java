@@ -125,21 +125,30 @@ public class Tamagochi {
 
     public void comerMuito(){
         this.peso += 5;
-        System.out.println(this.nome + " está com " + this.peso + "kg");
-        System.out.println("Seu tamagochi comeu demais e agora ira dormir...");
-        dormir();
+        if(this.peso <= 20) {
+            System.out.println(this.nome + " está com " + this.peso + "kg");
+            System.out.println("Seu tamagochi comeu demais e agora ira dormir...");
+            dormir();
+        }
     }
 
     public void comerPouco(){
         this.peso += 1;
-        System.out.println("Seu tamagochi come um pouco...");
-        System.out.println(this.nome + " está com " + this.peso + "kg");
+        if(this.peso <= 20) {
+            System.out.println("Seu tamagochi come um pouco...");
+            System.out.println(this.nome + " está com " + this.peso + "kg");
+            System.out.println();
+        }
     }
 
     public void naoComer(){
         this.peso -= 2;
-        System.out.println("Seu tamagochi não comeu...");
-        System.out.println(this.nome + " está com " + this.peso + "kg");
+        if(this.peso > 0) {
+            System.out.println("Seu tamagochi não comeu...");
+            System.out.println(this.nome + " está com " + this.peso + "kg");
+            System.out.println();
+
+        }
     }
 
     //endregion
@@ -167,13 +176,17 @@ public class Tamagochi {
 
     public void dormir(){
         this.idade += 1;
-        System.out.println("Seu tamagochi dormiu...");
-        System.out.println(this.nome + " tem " + this.idade + " dias de vida");
+        if(this.idade < 15) {
+            System.out.println("Seu tamagochi estava cansado demais e dormiu...");
+            System.out.println(this.nome + " tem " + this.idade + " dias de vida");
+            System.out.println();
+        }
     }
 
     public void permanecerAcordado(){
         somaSono++;
         System.out.println(this.nome + " não dormiu e esta um pouco mais cansado");
+        System.out.println();
     }
     //endregion
 
@@ -201,21 +214,27 @@ public class Tamagochi {
 
     public void correr (){
         this.peso -= 4;
-        System.out.println("Seu tamagochi correu e agora precisa comer muito...");
-        comerMuito();
+        if(this.peso <= 20) {
+            System.out.println("Seu tamagochi correu, ele perdeu 4kg e agora precisa comer muito...");
+            comerMuito();
+        }
     }
 
     public void caminhar (){
         this.peso--;
-        System.out.println("Seu tamagochi");
-        System.out.println(this.nome + " está com " + this.peso + "kg");
-        setFome(true);
+        if(this.peso <= 20) {
+            System.out.println("Seu tamagochi caminhou e perdeu 1kg");
+            System.out.println(this.nome + " está com " + this.peso + "kg");
+            setFome(true);
+            System.out.println();
+        }
     }
     //endregion
 
     public void morrer(){
         System.out.println(this.nome + " morreu D:");
         setMorto(true);
+        System.exit(1);
     }
 }
 
