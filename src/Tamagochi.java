@@ -35,20 +35,31 @@ public class Tamagochi {
     //region Fome
     public void sentirFome(){
     //1
-        System.out.println("Seu Tamagochi");
+        System.out.println(this.nome + " está com fome...");
+        System.out.println("O que deseja fazer?: ");
+        System.out.println(" 1 - Comer Muito");
+        System.out.println(" 2 - Comer Pouco");
+        System.out.println(" 3 - Não Comer");
     }
 
     public void comerMuito(){
         this.peso += 5;
+        System.out.println(this.nome + " está com " + this.peso + "kg");
+        System.out.println("Seu tamagochi comeu demais e agora ira dormir...");
         dormir();
     }
 
     public void comerPouco(){
         this.peso += 1;
+        System.out.println("Seu tamagochi come um pouco...");
+        System.out.println(this.nome + " está com " + this.peso + "kg");
+
     }
 
     public void naoComer(){
         this.peso -= 2;
+        System.out.println("Seu tamagochi não comeu...");
+        System.out.println(this.nome + " está com " + this.peso + "kg");
     }
 
     //endregion
@@ -56,14 +67,23 @@ public class Tamagochi {
     //region Sono
     public void sentirSono(){
     //2
+        System.out.println(this.nome + " está com sono...");
+        System.out.println("O que deseja fazer?: ");
+        System.out.println(" 1 - Dormir");
+        System.out.println(" 2 - Permanecer Acordado");
     }
 
     public void dormir(){
         this.idade += 1;
+        System.out.println("Seu tamagochi dormiu...");
+        System.out.println(this.nome + " tem " + this.idade + " dias de vida");
+
     }
 
     public void permanecerAcordado(){
-        somaSono ++;
+        somaSono++;
+        System.out.println(this.nome + " não dormiu e esta um pouco mais cansado");
+
     }
     //endregion
 
@@ -71,23 +91,29 @@ public class Tamagochi {
 
     public void ficarEntediado (){
     //3
+        System.out.println(this.nome + " está com entediado...");
+        System.out.println("O que deseja fazer?: ");
+        System.out.println(" 1 - Correr 10 minutos");
+        System.out.println(" 2 - Caminhar 10 minutos");
     }
 
     public void correr (){
         this.peso -= 4;
+        System.out.println("Seu tamagochi correu e agora precisa comer muito...");
         comerMuito();
     }
 
     public void caminhar (){
-        this.peso --;
+        this.peso--;
+        System.out.println("Seu tamagochi");
+        System.out.println(this.nome + " está com " + this.peso + "kg");
         fome = true;
     }
     //endregion
+
     public void morrer(){
+        System.out.println(this.nome + " morreu D:");
         morto = true;
     }
-
-
-
 }
 
