@@ -53,7 +53,6 @@ public class Tamagochi {
         this.peso += 1;
         System.out.println("Seu tamagochi come um pouco...");
         System.out.println(this.nome + " está com " + this.peso + "kg");
-
     }
 
     public void naoComer(){
@@ -77,13 +76,11 @@ public class Tamagochi {
         this.idade += 1;
         System.out.println("Seu tamagochi dormiu...");
         System.out.println(this.nome + " tem " + this.idade + " dias de vida");
-
     }
 
     public void permanecerAcordado(){
         somaSono++;
         System.out.println(this.nome + " não dormiu e esta um pouco mais cansado");
-
     }
     //endregion
 
