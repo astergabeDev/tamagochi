@@ -33,71 +33,26 @@ public class Tamagochi {
     public Tamagochi(String nome) {
         this.nome = nome;
     }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public boolean isMorto() {
         return IsMorto;
     }
-
     public int getIdade() {
         return idade;
     }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
-    public boolean isFome() {
-        return fome;
-    }
-
     public void setFome(boolean fome) {
         this.fome = fome;
     }
-
     public double getPeso() {
         return peso;
     }
-
-    public void setPeso(double peso) {
-        this.peso = peso;
-    }
-
-    public boolean isSono() {
-        return sono;
-    }
-
-    public void setSono(boolean sono) {
-        this.sono = sono;
-    }
-
     public int getSomaSono() {
         return somaSono;
     }
-
-    public void setSomaSono(int somaSono) {
-        this.somaSono = somaSono;
-    }
-
-    public boolean isEntediado() {
-        return entediado;
-    }
-
-    public void setEntediado(boolean entediado) {
-        this.entediado = entediado;
-    }
-
     public void setMorto(boolean morto) {
         IsMorto = morto;
     }
     static Scanner input = new Scanner(System.in); //cria um scanner
+
     //region Fome
     public void sentirFome(){
     //1
@@ -127,27 +82,34 @@ public class Tamagochi {
         this.peso += 5;
         if(this.peso <= 20) {
             System.out.println(this.nome + " está com " + this.peso + "kg");
-            System.out.println("Seu tamagochi comeu demais e agora ira dormir...");
+            System.out.println("Seu tamagochi comeu demais, ganhou 5kg e agora ira dormir...");
             dormir();
+        }else if(this.peso > 20){
+            System.out.println(this.nome + " vai explodirrrrrr");
+            System.out.println("BOOOOOOM!!!");
         }
     }
 
     public void comerPouco(){
         this.peso += 1;
         if(this.peso <= 20) {
-            System.out.println("Seu tamagochi come um pouco...");
+            System.out.println("Seu tamagochi come um pouco e ganha 1kg...");
             System.out.println(this.nome + " está com " + this.peso + "kg");
             System.out.println();
+        }else if(this.peso > 20){
+            System.out.println(this.nome + " vai explodirrrrrr");
+            System.out.println("BOOOOOOM!!!");
         }
     }
 
     public void naoComer(){
         this.peso -= 2;
         if(this.peso > 0) {
-            System.out.println("Seu tamagochi não comeu...");
+            System.out.println("Seu tamagochi não comeu e perdeu 2kg...");
             System.out.println(this.nome + " está com " + this.peso + "kg");
             System.out.println();
-
+        }else if(this.peso <= 0){
+            System.out.println(this.nome + " ficou desnutrido");
         }
     }
 
@@ -177,14 +139,14 @@ public class Tamagochi {
     public void dormir(){
         this.idade += 1;
         if(this.idade < 15) {
-            System.out.println("Seu tamagochi estava cansado demais e dormiu...");
+            System.out.println("Seu tamagochi dormiu...");
             System.out.println(this.nome + " tem " + this.idade + " dias de vida");
             System.out.println();
         }
     }
 
     public void permanecerAcordado(){
-        somaSono++;
+        this.somaSono++;
         System.out.println(this.nome + " não dormiu e esta um pouco mais cansado");
         System.out.println();
     }
@@ -217,6 +179,8 @@ public class Tamagochi {
         if(this.peso <= 20) {
             System.out.println("Seu tamagochi correu, ele perdeu 4kg e agora precisa comer muito...");
             comerMuito();
+        }else if(this.peso <= 0){
+            System.out.println(this.nome + " ficou desnutrido");
         }
     }
 
@@ -227,12 +191,14 @@ public class Tamagochi {
             System.out.println(this.nome + " está com " + this.peso + "kg");
             setFome(true);
             System.out.println();
+        }else if(this.peso <= 0){
+            System.out.println(this.nome + " ficou desnutrido");
         }
     }
     //endregion
 
     public void morrer(){
-        System.out.println(this.nome + " morreu D:");
+        System.out.println(this.nome + " morreu ; -;");
         setMorto(true);
         System.exit(1);
     }

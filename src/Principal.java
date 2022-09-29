@@ -6,7 +6,9 @@ public class Principal {
     static Scanner input = new Scanner(System.in); //cria um scanner
 
     public static void main(String[] args) {
+
         cicloDeVida();
+
     }
 
     public static void cicloDeVida() {
@@ -18,7 +20,7 @@ public class Principal {
 
         while (!tamagochi.isMorto()) { //executa o while enquanto o tamagochi está vivo
             //verifica todas as possibilidades de morte do tamagochi
-            if (tamagochi.getIdade() == 15 || tamagochi.getPeso() >= 20 || tamagochi.getPeso() <= 0) {
+            if (tamagochi.getIdade() == 15 || tamagochi.getPeso() > 20 || tamagochi.getPeso() <= 0) {
                 tamagochi.morrer(); //caso alguma seja true, o tamagochi morre
             }
             if(tamagochi.getSomaSono() > 5){
@@ -39,30 +41,13 @@ public class Principal {
                     tamagochi.sentirFome();
                     break;
                 case 2:
-                    System.out.println("...");
-                    break;
-                case 3:
                     tamagochi.sentirSono();
                     break;
-                case 4:
-                    System.out.println("...");
-                    break;
-                case 5:
+                case 3:
                     tamagochi.ficarEntediado();
                     break;
-                case 6:
-                    System.out.println("...");
-                    break;
-                case 7:
-                    System.out.println("...");
-                    break;
-                case 8:
-                    System.out.println("...");
-                    break;
-                case 9:
-                    System.out.println("...");
-                    break;
                 default:
+                    System.out.println("...");
                     break;
             }
 
