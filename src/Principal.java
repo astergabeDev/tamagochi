@@ -29,11 +29,7 @@ public class Principal {
 
             //O código abaixo (try/catch) adiciona o delay entre cada execução do while para não ficar com spam no console
             //https://www.guj.com.br/t/delay-no-java/97997/4
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            tamagochi.delay(2);
 
             int n = (int)(Math.random()*9);
             switch (n) {
