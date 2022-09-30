@@ -57,6 +57,7 @@ public class Tamagochi {
     public void sentirFome(){
     //1
         System.out.println(this.nome + " está com fome...");
+        delay(2);
         System.out.println("O que deseja fazer?: ");
         System.out.println(" 1 - Comer Muito");
         System.out.println(" 2 - Comer Pouco");
@@ -81,11 +82,14 @@ public class Tamagochi {
     public void comerMuito(){
         this.peso += 5;
         if(this.peso <= 20) {
-            System.out.println(this.nome + " está com " + this.peso + "kg");
             System.out.println("Seu tamagochi comeu demais, ganhou 5kg e agora ira dormir...");
+            delay(2);
+            System.out.println(this.nome + " está com " + this.peso + "kg");
+            delay(2);
             dormir();
         }else if(this.peso > 20){
             System.out.println(this.nome + " vai explodirrrrrr");
+            delay(3);
             System.out.println("BOOOOOOM!!!");
         }
     }
@@ -94,10 +98,12 @@ public class Tamagochi {
         this.peso += 1;
         if(this.peso <= 20) {
             System.out.println("Seu tamagochi come um pouco e ganha 1kg...");
+            delay(2);
             System.out.println(this.nome + " está com " + this.peso + "kg");
             System.out.println();
         }else if(this.peso > 20){
             System.out.println(this.nome + " vai explodirrrrrr");
+            delay(3);
             System.out.println("BOOOOOOM!!!");
         }
     }
@@ -106,9 +112,11 @@ public class Tamagochi {
         this.peso -= 2;
         if(this.peso > 0) {
             System.out.println("Seu tamagochi não comeu e perdeu 2kg...");
+            delay(2);
             System.out.println(this.nome + " está com " + this.peso + "kg");
             System.out.println();
         }else if(this.peso <= 0){
+            delay(2);
             System.out.println(this.nome + " ficou desnutrido");
         }
     }
@@ -119,6 +127,7 @@ public class Tamagochi {
     public void sentirSono(){
     //3
         System.out.println(this.nome + " está com sono...");
+        delay(2);
         System.out.println("O que deseja fazer?: ");
         System.out.println(" 1 - Dormir");
         System.out.println(" 2 - Permanecer Acordado");
@@ -140,6 +149,7 @@ public class Tamagochi {
         this.idade += 1;
         if(this.idade < 15) {
             System.out.println("Seu tamagochi dormiu...");
+            delay(2);
             System.out.println(this.nome + " tem " + this.idade + " dias de vida");
             System.out.println();
         }
@@ -157,6 +167,7 @@ public class Tamagochi {
     public void ficarEntediado (){
     //5
         System.out.println(this.nome + " está com entediado...");
+        delay(2);
         System.out.println("O que deseja fazer?: ");
         System.out.println(" 1 - Correr 10 minutos");
         System.out.println(" 2 - Caminhar 10 minutos");
@@ -178,8 +189,10 @@ public class Tamagochi {
         this.peso -= 4;
         if(this.peso <= 20) {
             System.out.println("Seu tamagochi correu, ele perdeu 4kg e agora precisa comer muito...");
+            delay(2);
             comerMuito();
         }else if(this.peso <= 0){
+            delay(2);
             System.out.println(this.nome + " ficou desnutrido");
         }
     }
@@ -188,19 +201,30 @@ public class Tamagochi {
         this.peso--;
         if(this.peso <= 20) {
             System.out.println("Seu tamagochi caminhou e perdeu 1kg");
+            delay(2);
             System.out.println(this.nome + " está com " + this.peso + "kg");
             setFome(true);
             System.out.println();
         }else if(this.peso <= 0){
+            delay(2);
             System.out.println(this.nome + " ficou desnutrido");
         }
     }
     //endregion
 
     public void morrer(){
+        delay(2);
         System.out.println(this.nome + " morreu ; -;");
         setMorto(true);
         System.exit(1);
+    }
+
+    public void delay(int segundos){
+        try {
+            Thread.sleep(segundos*1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
 
