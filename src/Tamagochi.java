@@ -219,6 +219,9 @@ public class Tamagochi {
         System.exit(1);
     }
 
+
+    //O código abaixo (try/catch) adiciona o delay entre cada execução do while para não ficar com spam no console
+    //https://www.guj.com.br/t/delay-no-java/97997/4
     public void delay(int segundos){
         try {
             Thread.sleep(segundos*1000);
