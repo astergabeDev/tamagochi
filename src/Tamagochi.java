@@ -166,7 +166,7 @@ public class Tamagochi {
 
     public void ficarEntediado (){
     //5
-        System.out.println(this.nome + " está com entediado...");
+        System.out.println(this.nome + " está entediado...");
         delay(2);
         System.out.println("O que deseja fazer?: ");
         System.out.println(" 1 - Correr 10 minutos");
