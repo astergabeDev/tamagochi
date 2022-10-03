@@ -29,7 +29,7 @@ public class Principal {
 
             tamagochi.delay(2);
 
-            int n = (int)(Math.random()*9);
+            int n = (int)(Math.random()*6);
             switch (n) {
                 case 1 -> tamagochi.sentirFome();
                 case 2 -> tamagochi.sentirSono();
