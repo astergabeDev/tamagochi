@@ -1,4 +1,4 @@
-import lombok.*;
+
 import java.util.Scanner;
 
 public class Principal {
@@ -31,18 +31,10 @@ public class Principal {
 
             int n = (int)(Math.random()*9);
             switch (n) {
-                case 1:
-                    tamagochi.sentirFome();
-                    break;
-                case 2:
-                    tamagochi.sentirSono();
-                    break;
-                case 3:
-                    tamagochi.ficarEntediado();
-                    break;
-                default:
-                    System.out.println("...");
-                    break;
+                case 1 -> tamagochi.sentirFome();
+                case 2 -> tamagochi.sentirSono();
+                case 3 -> tamagochi.ficarEntediado();
+                default -> System.out.println("...");
             }
 
         }

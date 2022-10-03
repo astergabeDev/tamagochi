@@ -63,19 +63,11 @@ public class Tamagochi {
         System.out.println(" 2 - Comer Pouco");
         System.out.println(" 3 - Não Comer");
         int opcao = input.nextInt();
-        switch (opcao){
-            case 1:
-                comerMuito();
-                break;
-            case 2:
-                comerPouco();
-                break;
-            case 3:
-                naoComer();
-                break;
-            default:
-                System.out.println("insira uma opção válida");
-                break;
+        switch (opcao) {
+            case 1 -> comerMuito();
+            case 2 -> comerPouco();
+            case 3 -> naoComer();
+            default -> System.out.println("insira uma opção válida");
         }
     }
 
@@ -132,16 +124,10 @@ public class Tamagochi {
         System.out.println(" 1 - Dormir");
         System.out.println(" 2 - Permanecer Acordado");
         int opcao = input.nextInt();
-        switch (opcao){
-            case 1:
-                dormir();
-                break;
-            case 2:
-                permanecerAcordado();
-                break;
-            default:
-                System.out.println("insira uma opçao valida");
-                break;
+        switch (opcao) {
+            case 1 -> dormir();
+            case 2 -> permanecerAcordado();
+            default -> System.out.println("insira uma opçao valida");
         }
     }
 
@@ -172,16 +158,10 @@ public class Tamagochi {
         System.out.println(" 1 - Correr 10 minutos");
         System.out.println(" 2 - Caminhar 10 minutos");
         int opcao = input.nextInt();
-        switch (opcao){
-            case 1:
-                correr();
-                break;
-            case 2:
-                caminhar();
-                break;
-            default:
-                System.out.println("insira uma opçao valida");
-                break;
+        switch (opcao) {
+            case 1 -> correr();
+            case 2 -> caminhar();
+            default -> System.out.println("insira uma opção valida");
         }
     }
 
@@ -224,7 +204,7 @@ public class Tamagochi {
     //https://www.guj.com.br/t/delay-no-java/97997/4
     public void delay(int segundos){
         try {
-            Thread.sleep(segundos*1000);
+            Thread.sleep(segundos* 1000L);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
