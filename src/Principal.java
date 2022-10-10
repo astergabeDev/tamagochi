@@ -31,12 +31,57 @@ public class Principal {
 
             int n = (int)(Math.random()*6);
             switch (n) {
-                case 1 -> tamagochi.sentirFome();
-                case 2 -> tamagochi.sentirSono();
-                case 3 -> tamagochi.ficarEntediado();
+                case 1 -> sentirFome(tamagochi);
+                case 2 -> sentirSono(tamagochi);
+                case 3 -> ficarEntediado(tamagochi);
                 default -> System.out.println("...");
             }
 
+        }
+    }
+    public static void ficarEntediado (Tamagochi tamagochi){
+        //5
+        System.out.println(tamagochi.getNome() + " está entediado...");
+        tamagochi.delay(2);
+        System.out.println("O que deseja fazer?: ");
+        System.out.println(" 1 - Correr 10 minutos");
+        System.out.println(" 2 - Caminhar 10 minutos");
+        int opcao = input.nextInt();
+        switch (opcao) {
+            case 1 -> tamagochi.correr();
+            case 2 -> tamagochi.caminhar();
+            default -> System.out.println("insira uma opção valida");
+        }
+    }
+
+    public static void sentirSono(Tamagochi tamagochi){
+        //3
+        System.out.println(tamagochi.getNome() + " está com sono...");
+        tamagochi.delay(2);
+        System.out.println("O que deseja fazer?: ");
+        System.out.println(" 1 - Dormir");
+        System.out.println(" 2 - Permanecer Acordado");
+        int opcao = input.nextInt();
+        switch (opcao) {
+            case 1 -> tamagochi.dormir();
+            case 2 -> tamagochi.permanecerAcordado();
+            default -> System.out.println("insira uma opçao valida");
+        }
+    }
+    public static void sentirFome(Tamagochi tamagochi){
+        //1
+        System.out.println(tamagochi.getNome() + " está com fome...");
+        tamagochi.delay(2);
+        System.out.println("O que deseja fazer?: ");
+        System.out.println(" 1 - Comer Muito");
+        System.out.println(" 2 - Comer Pouco");
+        System.out.println(" 3 - Não Comer");
+        int opcao = input.nextInt();
+        switch (opcao) {
+            case 1 -> tamagochi.comerMuito();
+            case 2 -> tamagochi.comerPouco();
+            case 3 -> tamagochi.naoComer();
+            default -> System.out.println("insira uma opção válida");
         }
     }
 }

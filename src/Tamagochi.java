@@ -54,22 +54,7 @@ public class Tamagochi {
     static Scanner input = new Scanner(System.in); //cria um scanner
 
     //region Fome
-    public void sentirFome(){
-    //1
-        System.out.println(this.nome + " está com fome...");
-        delay(2);
-        System.out.println("O que deseja fazer?: ");
-        System.out.println(" 1 - Comer Muito");
-        System.out.println(" 2 - Comer Pouco");
-        System.out.println(" 3 - Não Comer");
-        int opcao = input.nextInt();
-        switch (opcao) {
-            case 1 -> comerMuito();
-            case 2 -> comerPouco();
-            case 3 -> naoComer();
-            default -> System.out.println("insira uma opção válida");
-        }
-    }
+
 
     public void comerMuito(){
         this.peso += 5;
@@ -116,20 +101,7 @@ public class Tamagochi {
     //endregion
 
     //region Sono
-    public void sentirSono(){
-    //3
-        System.out.println(this.nome + " está com sono...");
-        delay(2);
-        System.out.println("O que deseja fazer?: ");
-        System.out.println(" 1 - Dormir");
-        System.out.println(" 2 - Permanecer Acordado");
-        int opcao = input.nextInt();
-        switch (opcao) {
-            case 1 -> dormir();
-            case 2 -> permanecerAcordado();
-            default -> System.out.println("insira uma opçao valida");
-        }
-    }
+
 
     public void dormir(){
         this.idade += 1;
@@ -150,20 +122,7 @@ public class Tamagochi {
 
     //region Entediado
 
-    public void ficarEntediado (){
-    //5
-        System.out.println(this.nome + " está entediado...");
-        delay(2);
-        System.out.println("O que deseja fazer?: ");
-        System.out.println(" 1 - Correr 10 minutos");
-        System.out.println(" 2 - Caminhar 10 minutos");
-        int opcao = input.nextInt();
-        switch (opcao) {
-            case 1 -> correr();
-            case 2 -> caminhar();
-            default -> System.out.println("insira uma opção valida");
-        }
-    }
+
 
     public void correr (){
         this.peso -= 4;
